@@ -12,22 +12,15 @@
         }
         .review-container{
             background-color:white;
-            height: 500px;
-            border: #feb79f 3px solid;
-             display: block;
-            width: 1463px;
-            margin:5px auto;
-            padding: 20px;
+            margin:10px auto;
             border-radius:30px ;
-            box-shadow: 0px 5px 15px black;
+            box-shadow: 0px 5px 15px #feb79f;
            overflow-y: scroll;
           
         }
         .action-container{
-            display: block;
-            margin:7px auto;
-            width: 600px;
-            margin-top: 20px;
+            box-shadow: 0px 0px 15px #feb79f;
+            margin:10px auto;
         }
         #input{
             border-radius: 15px;
@@ -35,21 +28,19 @@
             width: 250px;
             box-shadow: 3px 0px 10px #feb79f;
         }
-       .file-text{
+       .label-name{
             font-size: 20px;
+            font-weight: bolder;
         
         }
        #review-input{
         border-radius: 15px;
         padding: 15px 40px;
-        width: 250px;
+        width: 500px;
         height: 500px;
         box-shadow: 3px 0px 10px #feb79f;
        }
-        #add-btn{
-            border-radius: 15px;
-            margin: 5px;
-            padding: 15px 10px;
+       .review-btn{
             font-weight: bolder;
             cursor: pointer;
             border:white 1px solid;
@@ -57,6 +48,15 @@
             border:#feb79f 1px solid;
             box-shadow: 3px 0px 10px #feb79f;
 
+        }
+        .review-btn:hover{
+            background-color: #FBAB7E;
+            background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 8%);;
+            color: white;
+        }
+        .display-review{
+            box-shadow: 3px 0px 10px #feb79f;
+       
         }
        
         @media screen and (max-width:760px) {
@@ -72,15 +72,88 @@
 </head>
 <body>
     <h1 class="heading text-start text-sm-center"><b> Reviews !!!!!!</b></h1>
-    <div class="review-container" id="review-container">
+  <div class="row">
+    <div class="action-container card col-md-5 col-xs-12  p-md-4 px-5 w-xs-100 w-md-auto">
+        <span class="label-name">Name :</span> <br>
+        <input type="text" placeholder="Enter Name" required class="mb-4 p-2 px-5 rounded border border-black"
+        id="input-Name"> <br><br>
+        <span class="label-name">Write Review :</span> <br>
+        <textarea name="Message" rows="4" placeholder="Write Your Review" required
+              class="p-5 rounded border border-black" id="input-Msg"></textarea><br><br><br>
+              <div class="mt-4 mb-4">
+                <button type="button" class="px-4 py-2 mx-4 rounded bod review-btn" onclick="cancelReview()">&nbsp; Cancel &nbsp;</button>
+                <button type="button" class="px-5 py-2 rounded border bag review-btn" onclick="addReview()">Post</button>
+              </div>
+    </div>
+     <div class="review-container col-md-4 col-xs-12 col-lg-6">
+    <div class="row">
+    <div class=" r-bag d-flex flex-wrap justify-content-evenly p-md-4" id="reviewContainer">
        
     </div>
-    <div class="action-container">
-        <input type="text" id="input" placeholder="Enter your name" required> <br><br>
-       <span class="file-text text-muted">Add product image in review :</span> 
-        <input type="file" id="image" id="img-input" accept="image/*" > <br><br>
-        <textarea name="review-ared" id="reviewArea" id="review-input" rows="15" cols="40" placeholder="Write Review" required></textarea> <br><br><br>
-        <button type="button" id="add-btn" onclick="add()"> Add Review</button>
     </div>
+</div>
+</div>
+<script>
+    let reviewListName = [];
+let reviewListMsg = [];
+
+const reviewBox = document.getElementById("reviewContainer");
+
+const reviewNameItemsLS = localStorage.getItem("reviewListName");
+const reviewMsgItemsLS = localStorage.getItem("reviewListMsg");
+
+if(reviewNameItemsLS){
+    reviewListName = JSON.parse(reviewNameItemsLS);
+    reviewListMsg = JSON.parse(reviewMsgItemsLS);
+    loadList();
+}
+
+function addReview(){
+    const inputName = document.getElementById("input-Name");
+    const name = inputName.value;
+    const inputMsg = document.getElementById("input-Msg");
+    const msg = inputMsg.value;
+
+    if (name) {
+        reviewListName.push(name);
+        reviewListMsg.push(msg);
+
+        localStorage.setItem("reviewListName", JSON.stringify(reviewListName));
+        localStorage.setItem("reviewListMsg", JSON.stringify(reviewListMsg));
+
+        inputName.value = "";
+        inputMsg.value = "";
+        loadList();
+    }
+    else {
+        alert("Please enter name");
+    }
+}
+
+function loadList() {
+    reviewBox.innerHTML = "";
+
+    for (let i = 0; i < reviewListName.length; i++) {
+        let name = reviewListName[i];
+        let msg = reviewListMsg[i];
+        reviewBox.innerHTML = reviewBox.innerHTML + `
+            <div class="card p-3 col-md-3 col-xs-12 col-sm-4 m-4  display-review">
+            <h4 class="text-center mt-3 ">${name}</h4>
+             <p class="mt-1 m-2 text-center flex-row ">${msg}</p>
+           
+        </div>`;
+    }
+}
+
+function cancelReview(){
+    const inputName = document.getElementById("input-Name");
+    const name = inputName.value;
+    const inputMsg = document.getElementById("input-Msg");
+    const msg = inputMsg.value;
+
+    inputName.value = "";
+    inputMsg.value = "";
+}
+  </script>
 </body>
 </html>
