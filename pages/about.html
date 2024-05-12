@@ -10,9 +10,25 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Jaini&display=swap');
         </style>
+        <style>
+          .card-container{
+            box-shadow: 3px 0px 10px #feb79f;
+            margin-left: 50px;
+           
+          }
+          .owner-img{
+            border-radius: 50%;
+            height: 200px;
+            margin-top: 10px;
+            border: #feb79f 3px solid;
+            box-shadow: 3px 0px 10px #feb79f;
+
+          }
+        </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary " >
+    <nav class="navbar navbar-expand-lg bg-body-tertiary "style="background-color: #FBAB7E;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 8%);" >
         <div class="container-fluid header-align p-4 justify-content-center" style="background-color: #FBAB7E;
         background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 8%);">
           <a class="navbar-brand fs-1 logo-font" href="./../index.html">स्वर्णस्वप्न गृहउद्योग</a>
@@ -38,9 +54,34 @@
         </div>
       </nav>
 <!--header end-->
+<center><h1><b>About Us ...!</b></h1></center>
+<div class="row mt-4 mb-4">
+  <div class="col-md-3 col-lg-6 col-xs-12 card-container ">
+    <img src="./../imgs/owner-img.jpg" class="img-fluid owner-img mx-auto d-block "id="ownwer-img" onclick="img()" alt="owner-img"> <br>
+    <div class="ms-4">
+      <p class="fs-4"><span class="fw-bolder">Name of Owner :</span> Mrs. Sangita Sudhakar Satpute</p> <br>
+      <p class="fs-4"> <span class="fw-bolder">Nature Of Bussiness : </span> Manufacturing and Supplier</p> <br>
+      <p class="fs-4"> <span class="fw-bolder">Number of Employees :</span> Only a single Lady</p> <br>
+      <p class="fs-4"> <span class="fw-bolder">Year of Establishment :</span> May 2011</p> <br>
+      <p class="fs-4"><span class="fw-bolder">Market Covered :</span> Only in Maharashtra</p> <br>
+     
+  </div>  
+  </div>
+<div class="container card-container col-md-9 col-lg-5 col-xs-12 ">
+  &ensp;&ensp; Welcome to Swarn Swapn GruhUdyog, where we bring the authentic taste of homemade noodles(Shevai) to your table . <br><br>
+  <marquee class="fw-bolder fs-4" style="color:#FBAB7E">स्वर्णस्वप्न गृहउद्योग</marquee>
 
+  &ensp;&ensp;At Swarn Swapn GruhUdyog , we have a passion for preserving traditional culinary practices while infusing them with modern flair. Our journey began in May 2011, when Mrs. Sangita Sudhakar Satpute embarked on a quest to recreate the flavors of their childhood memories. Inspired by the rich heritage of homemade noodles(Shevai ), we set out to share this cherished tradition with Shevai lovers everywhere. <br><br>
 
+  &ensp;&ensp;What sets us apart is our commitment to quality and authenticity. We carefully select the finest ingredients, sourcing locally whenever possible, to ensure every batch of noodles is crafted with love and attention to detail. Each strand carries the essence of homemade goodness, bringing warmth and comfort to every meal. <br><br>
 
+  &ensp;&ensp;But our story doesn't end with the noodles themselves. We believe in fostering a sense of community around the dining table. Whether you're enjoying a bowl with family or sharing stories with friends, our noodles are more than just food—they're a catalyst for connection and shared experiences. <br><br>
+
+  &ensp;&ensp;From our kitchen to yours, we invite you to savor the simple pleasure of homemade noodles. Join us on this culinary journey, where every bite tells a story and every meal is a celebration of tradition and togetherness. <br><br>
+
+  &ensp;&ensp;Thank you for choosing Swarn Swapn GruhUdyog. Let's make every moment around the table memorable.
+</div>
+</div>
 <!--Footer start-->
 <footer style="background-color: #ffa366;">
     <div class="container">
@@ -72,6 +113,11 @@
     </div>
   </footer>
       <script src="https://kit.fontawesome.com/0dcf08ad5b.js" crossorigin="anonymous"></script>     
-    
+    <script>
+      function img(){
+        const img=document.getElementById("ownwer-img")
+        img.src="./../imgs/owner-img.jpg"
+      }
+    </script>
 </body>
 </html>
