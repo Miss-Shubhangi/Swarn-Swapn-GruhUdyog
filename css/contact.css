@@ -1,0 +1,26 @@
+
+.contact-card{
+  text-decoration: none;
+  color: black;
+  margin-top: 15px;
+}
+.card-images{
+ 
+  padding: 60px;
+
+}
+.review-btn{
+  font-weight:bold;
+  cursor: pointer;
+  border:white 1px solid;
+  background-color: white;
+  border:#feb79f 1px solid;
+  box-shadow: 3px 0px 10px #feb79f;
+
+}
+/*.card-container{
+box-shadow: 3px 0px 5px #feb79f;
+}
+.card-container:hover{
+box-shadow: 3px 0px 10px #feb79f;
+}*/

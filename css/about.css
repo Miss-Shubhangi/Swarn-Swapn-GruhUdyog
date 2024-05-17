@@ -1,0 +1,14 @@
+
+          .card-container{
+            box-shadow: 3px 0px 10px #feb79f;
+            margin-left: 50px;
+           
+          }
+          .owner-img{
+            border-radius: 50%;
+            height: 200px;
+            margin-top: 10px;
+            border: #feb79f 3px solid;
+            box-shadow: 3px 0px 10px #feb79f;
+
+          }
