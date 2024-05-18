@@ -7,7 +7,7 @@
     box-shadow: 3px 0px 10px #feb79f;
   }
     #main-container{
-      
+       width:400px;
       box-shadow: 3px 0px 10px #feb79f;
       border:#feb79f 1px solid;
     }
