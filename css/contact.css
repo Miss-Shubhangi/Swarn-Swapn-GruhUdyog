@@ -9,6 +9,11 @@
   padding: 60px;
 
 }
+.card-shadow{
+  background-color: white;
+  border:#feb79f 1px solid;
+  box-shadow: 3px 0px 10px #feb79f;
+}
 .review-btn{
   font-weight:bold;
   cursor: pointer;
@@ -17,6 +22,9 @@
   border:#feb79f 1px solid;
   box-shadow: 3px 0px 10px #feb79f;
 
+}
+h1:hover{
+   color:#feb79f;
 }
 /*.card-container{
 box-shadow: 3px 0px 5px #feb79f;

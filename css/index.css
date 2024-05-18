@@ -18,3 +18,13 @@
     box-shadow: 3px 0px 10px #feb79f;
     border:#feb79f 1px solid;
   }
+  h2{
+    font-weight: bolder;
+    border:white 1px solid;
+    background-color: white;
+    border:#feb79f 1px solid;
+    box-shadow: 3px 0px 10px #feb79f;
+  }
+  h2:hover{
+    color:#feb79f ;
+  }
