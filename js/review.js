@@ -1,6 +1,6 @@
 
 
-/*
+
     let reviewListName = [];
     let reviewListMsg = [];
 
@@ -59,7 +59,7 @@
         inputName.value = "";
         inputMsg.value = "";
     }
-*/
+
 
  /* let reviewListName = [];
 let reviewListMsg = [];
