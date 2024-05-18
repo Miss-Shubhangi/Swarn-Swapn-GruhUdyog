@@ -1,4 +1,7 @@
 
+const confirmOrder = () => confirm(`You really want order product?`);
+
+
     function ChangeImage(num){
         const MainImage = document.getElementById('Main-Product');
         let productdetails = document.getElementById("product-details")
