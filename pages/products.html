@@ -18,9 +18,34 @@
             background-color: white;
             border:#feb79f 1px solid;
             box-shadow: 3px 0px 10px #feb79f;
-            
-
-        }
+          }
+            #main-container{
+              box-shadow: 3px 0px 10px #feb79f;
+              border:#feb79f 1px solid;
+            }
+            #Main-Product{
+             /* width: 400px;
+              height: 400px;*/
+              object-fit: cover;
+              border: 1px solid black;
+             box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 75);
+             margin: 20px auto;
+             display: block;
+          }
+          .Product-images{
+              height: 100px;
+              width: 100px;
+              object-fit: cover;
+              border: 1px solid black;
+              border-radius: 5px;
+              margin: 10px;
+              cursor: pointer;
+          }
+          .Product-images-container{
+              display: flex;
+              justify-content: center;
+          }
+        
         </style>
 </head>
 <body>
@@ -52,16 +77,141 @@
       </nav>
 <!--header end-->
 <br> <br> <br> <br><br>
-<div class="container opacity-75">
-  <p class="fs-6">Name :Small Size Shevai</p> 
-  <p class="fs-6">Flavour : Un-flavoured </p> 
-  <p class="fs-6">Color : No Color </p> 
-  <p class="fs-6">Packaging Type : Plastic Package</p> 
-  <p class="fs-6">Price : ₹ 100 per Kg <del > ₹130 </del></p> <br>
-  <button type="button" class="px-4 py-2  rounded border review-btn" onclick="cancel()">&nbsp; Cancel &nbsp;</button>
-  <button type="button" class="px-3 py-2 rounded border bag review-btn" > <a href="./pages/products.html" style="text-decoration: none; color: black;">View More</a></button>
- 
+<div class="card text-center p-2 my-3 mx-auto my-5 " id="main-container"style="width: 30rem;">
+  <img src="./../imgs/small-size-noodles.webp" id="Main-Product" class="card-img-top" alt="...">
+  <div class="card-body"id="product-details" >
+    
+    <h5 class="card-title">Noodles</h5>
+    <p class="price">₹ 130/- per Kg <del>₹ 180</del></p>
+     <div class="total-value">
+       <span id="quanty"> 1 </span>  X 130 = <span id="quantyTotal"> 130 </span>
+     </div>
+  
+
+<div class="quantity-container py-3">
+   <img src="./../icons/minus-button.png" alt="minus" class="minus" id="minus" height="30px" onclick="decQuantity()">
+   <span class="quantity-value" id="quantity-value"> 1 </span>
+   <img src="./../icons/plus (1).png" alt="plus" class="plus" id="plus" height="30px" onclick="incQuantity()">
 </div>
+<button type="button" class="px-4 py-2 mx-4 rounded bod review-btn">Order Now</button>
+  </div>
+</div>
+
+  <div class=" my-4 row  justify-content-evenly ">
+    <div class="col-lg-4 col-md-2 col-xs-12 my-3  container  p-4 text-muted"id="sm-size" style="cursor: pointer;"  onclick="ChangeImage(1)" >
+       <img src="./../imgs/small-sized-shevai.jpg" class="rounded  d-block img-fluid"  height="340px" width="450px" alt="...">
+     
+    </div> 
+    <div class="col-lg-4 col-md-2 col-xs-12 my-3 container p-4 text-muted" id="md-size" style="cursor: pointer;" onclick="ChangeImage(2)">
+        <img src="./../imgs/medium-size-shevai.jpg" class="rounded d-block img-fluid " height="340px" width="450px" alt="...">
+    </div>
+    <div class="col-lg-4 col-md-2 col-xs-12 my-3 container  p-4 text-muted"id="lg-size"style="cursor: pointer;"  onclick="ChangeImage(3)">
+       <img src="./../imgs/thick-size-shevai.jpg" class="rounded  d-block img-fluid" height="340px" width="450px" alt="...">
+    </div>
+    <div class="col-lg-4 col-md-2 col-xs-12 my-3 container  p-4 text-muted "id="unflavoured"style="cursor: pointer;" onclick="ChangeImage(4)">
+       <img src="./../imgs/without -flavoured.jpg" class="rounded  d-block img-fluid" height="340px" width="450px" alt="...">
+    </div>
+    <div class="col-lg-4 col-md-2 col-xs-12 my-3 container  p-4 text-muted"id="mango-flavour"style="cursor: pointer;" onclick="ChangeImage(5)">
+        <img src="./../imgs/coloured-shevai.jpg" class="rounded  d-block img-fluid" height="340px" width="450px" alt="...">
+    </div>
+    <div class="col-lg-4 col-md-2 col-xs-12 my-3 container  p-4 text-muted"id="coloured"style="cursor: pointer;" onclick="ChangeImage(6)">
+        <img src="./../imgs/mango-flavoured.jpg" class="rounded  d-block img-fluid" height="340px" width="450px" alt="...">
+  </div>
+
+  <div class="col-lg-4 col-md-2 col-xs-12 my-3 container  p-4 text-muted"id="coloured" style="cursor: pointer;" onclick="ChangeImage(7)">
+    <img src="./../imgs/small-size-noodles.webp" class="rounded  d-block img-fluid" height="340px" width="450px" alt="...">
+</div>
+<div class="col-lg-4 col-md-2 col-xs-12 my-3 container  p-4 text-muted"id="coloured"style="cursor: pointer;" onclick="ChangeImage(8)">
+  <img src="./../imgs/unflavoured-medium-size.jpg" class="rounded  d-block img-fluid" height="340px" width="450px" alt="...">
+</div>
+
+  </div>
+   
+</div>
+<script>
+    function ChangeImage(num){
+        const MainImage = document.getElementById('Main-Product');
+        let productdetails = document.getElementById("product-details")
+        if(num==1){
+            MainImage.src = "./../imgs/small-sized-shevai.jpg";
+            productdetails.innerHTML=`<h5 class="card-title">Noodles</h5>
+            <p class="price" id="product-price">₹ 100/- per Kg <del>₹ 130</del></p>
+             <div class="total-value">
+               <span id="quanty"> 1 </span>  X 100 = <span id="quantyTotal"> 100 </span>
+             </div>
+             <div class="quantity-container py-3">
+              <img src="./../icons/minus-button.png" alt="minus" class="minus" id="minus" height="30px" onclick="decQuantity()">
+              <span class="quantity-value" id="quantity-value"> 1 </span>
+              <img src="./../icons/plus (1).png" alt="plus" class="plus" id="plus" height="30px" onclick="incQuantity()">
+           </div>
+           <button type="button" class="px-4 py-2 mx-4 rounded bod review-btn">Order Now</button>
+             </div>`
+
+        }
+        else if(num==2){
+            MainImage.src = "./../imgs/medium-size-shevai.jpg";
+        }
+        else if(num==3){
+            MainImage.src = "./../imgs/thick-size-shevai.jpg";
+        }
+        else if(num==4){
+            MainImage.src = "./../imgs/without -flavoured.jpg";
+        }
+        else if(num==5){
+            MainImage.src = "./../imgs/coloured-shevai.jpg";
+        }
+        else if(num==6){
+          MainImage.src = "./../imgs/mango-flavoured.jpg";
+      }
+      else if(num==7){
+        MainImage.src = "./../imgs/small-size-noodles.webp";
+    }
+    else if(num==8){
+      MainImage.src = "./../imgs/unflavoured-medium-size.jpg";
+  }
+
+        
+
+    }
+    function decQuantity(){
+      let decValue = document.getElementById("minus")
+      let quantityValue =document.getElementById("quantity-value")
+      let productprice =document.getElementById("product-price")
+      let quantity= parseInt(quantityValue.innerText)
+      if(quantity!=0){
+      quantityValue.innerText = --quantity
+      quanty.innerText= `${quantity}`;
+      let totalPrice = document.getElementById("quantyTotal")
+      totalPrice.innerText =`${quantity * productprice }`
+      }
+      else{
+            alert(`You should buy at least 1 product `)
+      }
+      setQuantity(quantity)
+  }
+     
+  
+  function incQuantity(){
+      let incValue = document.getElementById("minus")
+      let quantityValue =document.getElementById("quantity-value")
+      let productprice =document.getElementById("product-price")
+     
+      let quantity= parseInt(quantityValue.innerText)
+      if(quantity<10){
+      quantityValue.innerText = ++quantity
+      
+     
+      }
+      else{
+        alert(`Your limit is exceed. You can't add more than 10.`)
+      }
+      setQuantity(quantity ,productprice)
+  }
+  function setQuantity(quantity ,productprice){
+      quanty.innerText= `${quantity}`;
+      quantyTotal.innerText=`${quantity * productprice }`
+  }
+</script>
 
 <!--Footer start-->
 <footer style="background-color: #ffa366;">
